@@ -26,7 +26,7 @@ namespace MazeApp
             var services = new ServiceModule();
             var builder = new ContainerBuilder();
             builder.RegisterModule(services);
-            builder.Register(c => new ViewModelService(c.Resolve<ISolveMaze>(), c.Resolve<ILoadMaze>())).As<IViewModelService>();
+            builder.Register(c => new ViewModelService(c.Resolve<ICalculate>(), c.Resolve<ILoadMaze>())).As<IViewModelService>();
             builder.Register(c => new MainWindow(c.Resolve<IViewModelService>())).SingleInstance();
             serviceProvider = builder.Build();
            

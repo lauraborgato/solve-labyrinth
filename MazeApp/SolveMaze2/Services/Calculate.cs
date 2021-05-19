@@ -5,7 +5,7 @@ using Maze.Model;
 
 namespace Maze.Service
 {
-    public class Calculate : ISolveMaze
+    public class Calculate : ICalculate
     {
         private readonly ILoadMaze LoadMaze;
 
@@ -20,7 +20,6 @@ namespace Maze.Service
 
         private int[,] CalculateMinDistances()
         {
-
             List<Node> stillNotVisited = new List<Node>();
             stillNotVisited.Add(new Node(LoadMaze.StartRow, LoadMaze.StartCol, 0));
 
@@ -36,7 +35,6 @@ namespace Maze.Service
                         LoadMaze.MazeToSolve[neighbour.Row, neighbour.Column] = current.Distance + 1;
                         stillNotVisited.Add(neighbour);
                     }
-
                 }
             }
             return LoadMaze.MazeToSolve;

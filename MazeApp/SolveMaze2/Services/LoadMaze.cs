@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using Maze.Interface;
@@ -24,18 +25,11 @@ namespace Maze.Service
             var cr = '\r';
             var rows = maze.Trim().Split(newLine);
             MAXROW = rows.Length;
-            MAXCOL = rows[0].Replace("\r", string.Empty).Split(',')
-                    .Where(elem => !string.IsNullOrEmpty(elem))
-                    .Select(elem => elem.Trim()).Count();
+            MAXCOL = GetColumn(0, rows).Count();
             int[,] loadedMaz = new int[MAXROW, MAXCOL];
             for (int rowIndex = 0; rowIndex < rows.Length; rowIndex++)
             {
-
-                var cells = rows[rowIndex].Replace("\r", string.Empty)
-                    .Trim().Split(',')
-                    .Where(elem => !string.IsNullOrEmpty(elem))
-                    .Select(elem => elem.Trim())
-                    .ToArray();
+                var cells = GetColumn(rowIndex, rows).ToArray();
                 for (int colIndex = 0; colIndex < cells.Length; colIndex++)
                 {
                     if (cells[colIndex].Equals("-2"))
@@ -45,7 +39,6 @@ namespace Maze.Service
                     }
                     loadedMaz[rowIndex, colIndex] = Convert.ToInt32(cells[colIndex]);
                 }
-
             }
             MazeToSolve = loadedMaz;
         }
@@ -68,6 +61,14 @@ namespace Maze.Service
                 { -2,  0, -1,  0,  0,  0, -1,  0 },
             };
             MazeToSolve = imageMapExample;
+        }
+
+        private IEnumerable<string> GetColumn(int row, string[] rows)
+        {
+            return rows[row].Replace("\r", string.Empty)
+                    .Trim().Split(',')
+                    .Where(elem => !string.IsNullOrEmpty(elem))
+                    .Select(elem => elem.Trim());
         }
     }
 }

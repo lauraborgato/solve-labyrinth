@@ -8,12 +8,12 @@ namespace MazeApp.ViewModel
 {
     class ViewModelService : IViewModelService
     {
-        private readonly ISolveMaze SolveMazeService;
+        private readonly ICalculate SolveMazeService;
         private readonly ILoadMaze LoadMazeSerivce;
         public int MaXCOL { get; set; }
         public int MaXROW { get; set; }
 
-        public ViewModelService(ISolveMaze solveMazeService, ILoadMaze loadMazeService)
+        public ViewModelService(ICalculate solveMazeService, ILoadMaze loadMazeService)
         {
             SolveMazeService = solveMazeService;
             LoadMazeSerivce = loadMazeService;

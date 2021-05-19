@@ -9,7 +9,7 @@ namespace SolveMaze
         protected override void Load(ContainerBuilder builder)
         {
             builder.Register(c => new LoadMaze()).As<ILoadMaze>().SingleInstance();
-            builder.Register(c => new Calculate(c.Resolve<ILoadMaze>())).As<ISolveMaze>();
+            builder.Register(c => new Calculate(c.Resolve<ILoadMaze>())).As<ICalculate>();
         }
     }
 }

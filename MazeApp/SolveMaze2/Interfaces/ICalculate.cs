@@ -1,6 +1,6 @@
 ﻿namespace Maze.Interface
 {
-    public interface ISolveMaze
+    public interface ICalculate
     {
         int[,] Solve();
     }

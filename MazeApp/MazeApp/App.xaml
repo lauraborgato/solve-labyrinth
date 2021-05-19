@@ -7,7 +7,10 @@
         <Style TargetType="ItemsControl">
             <Setter Property="Foreground" Value="DarkSlateGray"></Setter>
             <Setter Property="Background" Value="LightGray"></Setter>
-
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Foreground" Value="White"></Setter>
+            <Setter Property="Background" Value="Black"></Setter>
         </Style>
     </Application.Resources>
 </Application>
