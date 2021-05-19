@@ -1,0 +1,13 @@
+﻿<Application x:Class="MazeApp.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MazeApp"
+             Startup="OnStartup">
+    <Application.Resources>
+        <Style TargetType="ItemsControl">
+            <Setter Property="Foreground" Value="DarkSlateGray"></Setter>
+            <Setter Property="Background" Value="LightGray"></Setter>
+
+        </Style>
+    </Application.Resources>
+</Application>
