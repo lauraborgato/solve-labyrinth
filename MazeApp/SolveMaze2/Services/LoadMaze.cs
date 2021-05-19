@@ -22,7 +22,6 @@ namespace Maze.Service
             file.Close();
 
             var newLine = '\n';
-            var cr = '\r';
             var rows = maze.Trim().Split(newLine);
             MAXROW = rows.Length;
             MAXCOL = GetColumn(0, rows).Count();

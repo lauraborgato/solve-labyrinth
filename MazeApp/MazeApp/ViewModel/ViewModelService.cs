@@ -10,8 +10,8 @@ namespace MazeApp.ViewModel
     {
         private readonly ICalculate SolveMazeService;
         private readonly ILoadMaze LoadMazeSerivce;
-        public int MaXCOL { get; set; }
-        public int MaXROW { get; set; }
+        public int MAXCOL { get; set; }
+        public int MAXROW { get; set; }
 
         public ViewModelService(ICalculate solveMazeService, ILoadMaze loadMazeService)
         {
@@ -27,8 +27,8 @@ namespace MazeApp.ViewModel
                 LoadMazeSerivce.CrateMazeFromFile(streamReader);
             }
             else LoadMazeSerivce.CreateMaze();
-            MaXCOL = LoadMazeSerivce.MAXCOL;
-            MaXROW = LoadMazeSerivce.MAXROW;
+            MAXCOL = LoadMazeSerivce.MAXCOL;
+            MAXROW = LoadMazeSerivce.MAXROW;
         }
 
         public int[,] SoveMaze()

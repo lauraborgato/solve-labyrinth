@@ -39,8 +39,8 @@ namespace MazeApp
             ViewModelService.LoadMazeFromFile(SelectedFile);
             var solvedMaze = ViewModelService.SoveMaze();
             var _maze = new List<int>();
-            for (int i = 0; i < ViewModelService.MaXCOL; i++){
-                for(int j = 0; j < ViewModelService.MaXROW; j++)
+            for (int i = 0; i < ViewModelService.MAXCOL; i++){
+                for(int j = 0; j < ViewModelService.MAXROW; j++)
                 {
                     _maze.Add(solvedMaze[j, i]);
                 }

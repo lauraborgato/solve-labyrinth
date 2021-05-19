@@ -5,8 +5,8 @@ namespace MazeApp.ViewModel
 {
     public interface IViewModelService
     {
-        int MaXCOL { get; set; }
-        int MaXROW { get; set; }
+        int MAXCOL { get; set; }
+        int MAXROW { get; set; }
         int[,] SoveMaze();
         void LoadMazeFromFile(OpenFileDialog file);
     }
